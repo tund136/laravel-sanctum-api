@@ -62,6 +62,6 @@ class ProductController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
-        //
+        return Product::destroy($id);
     }
 }
