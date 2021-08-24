@@ -22,7 +22,13 @@ class ProductController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        //
+        $request->validate([
+            'name' => 'required',
+            'slug' => 'required',
+            'price' => 'required'
+        ]);
+
+        return Product::create($request->all());
     }
 
     /**
@@ -32,7 +38,7 @@ class ProductController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show($id) {
-        //
+        return Product::find($id);
     }
 
     /**
