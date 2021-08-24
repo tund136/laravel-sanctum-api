@@ -49,7 +49,10 @@ class ProductController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id) {
-        //
+        $product = Product::find($id);
+        $product->update($request->all());
+
+        return $product;
     }
 
     /**
